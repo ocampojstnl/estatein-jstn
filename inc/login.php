@@ -73,6 +73,16 @@ function estatein_custom_logout_url( $logout_url ) {
 add_filter( 'logout_url', 'estatein_custom_logout_url' );
 
 /**
+ * Where the logout action sends you afterward defaults to the hardcoded
+ * string 'wp-login.php?loggedout=true' — never built via site_url()/login_url(),
+ * so it bypasses those filters entirely and hits the real (hidden) wp-login.php.
+ */
+function estatein_custom_logout_redirect( $redirect_to ) {
+	return str_replace( 'wp-login.php', ESTATEIN_LOGIN_SLUG, $redirect_to );
+}
+add_filter( 'logout_redirect', 'estatein_custom_logout_redirect' );
+
+/**
  * The login/lostpassword/register forms build their own `action` attribute
  * via site_url( 'wp-login.php', $context ) directly — not through login_url()
  * — so without this, submitting the form POSTs straight to the real
