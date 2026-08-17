@@ -1,0 +1,57 @@
+{
+    "key": "group_estatein_property_fields",
+    "title": "Property Details",
+    "fields": [
+        {
+            "key": "field_property_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "rows": 3
+        },
+        {
+            "key": "field_property_bedrooms",
+            "label": "Number of Bedrooms",
+            "name": "bedrooms",
+            "type": "number"
+        },
+        {
+            "key": "field_property_bathrooms",
+            "label": "Number of Bathrooms",
+            "name": "bathrooms",
+            "type": "number"
+        },
+        {
+            "key": "field_property_type",
+            "label": "Type",
+            "name": "property_type",
+            "type": "text",
+            "instructions": "e.g. Villa, Apartment, Townhouse"
+        },
+        {
+            "key": "field_property_price",
+            "label": "Price",
+            "name": "price",
+            "type": "text",
+            "instructions": "Enter formatted, e.g. $550,000"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "property"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

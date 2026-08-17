@@ -1,0 +1,72 @@
+/* Testimonial card — only enqueued when the Slider Section's Source is
+   "Testimonials" (see template.php), or on archive-testimonial.php. */
+
+.testimonial-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: var(--color-grey);
+	border: 1px solid var(--color-border);
+	border-radius: 16px;
+	padding: 24px;
+}
+
+.testimonial-card__stars {
+	display: flex;
+	color: #facc15;
+}
+
+.testimonial-card__stars svg {
+	width: 16px;
+	height: 16px;
+	margin-right: 4px;
+}
+
+.testimonial-card__title {
+	margin: 16px 0 0;
+	font-family: var(--font-heading);
+	font-weight: 600;
+	font-size: 18px;
+	color: var(--color-white);
+}
+
+.testimonial-card__description {
+	margin-top: 8px;
+	font-family: var(--font-body);
+	font-size: 14px;
+	line-height: 150%;
+	color: var(--overlay-grey-60, rgba(255, 255, 255, 0.6));
+}
+
+.testimonial-card__author {
+	display: flex;
+	align-items: center;
+	margin-top: auto;
+	padding-top: 20px;
+}
+
+.testimonial-card__headshot {
+	width: 40px;
+	height: 40px;
+	border-radius: 500px;
+	object-fit: cover;
+	margin-right: 12px;
+}
+
+.testimonial-card__author-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.testimonial-card__author-name {
+	font-family: var(--font-body);
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--color-white);
+}
+
+.testimonial-card__author-location {
+	font-family: var(--font-body);
+	font-size: 13px;
+	color: var(--overlay-grey-60, rgba(255, 255, 255, 0.6));
+}

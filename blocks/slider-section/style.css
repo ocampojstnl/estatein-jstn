@@ -1,0 +1,436 @@
+/* Slider Section block — shared header/footer/nav skeleton only.
+   Card-specific styles are split into style-{property,testimonial,faq}.css and
+   conditionally enqueued from template.php based on the selected Source, so a
+   page only ever loads the CSS for the card type actually in use.
+   Colors/fonts/spacing reuse the global tokens from assets/style.css via var(). */
+
+.slider-section {
+	background-color: var(--color-black);
+	padding: 100px 80px 55px;
+}
+
+/* Header row: eyebrow + title + text on the left, View All button on the right */
+.slider-section__header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: 80px;
+}
+
+.slider-section__heading {
+	width: 74.19%;
+}
+
+.slider-section__eyebrow {
+	display: flex;
+	align-items: center;
+}
+
+.slider-section__eyebrow img {
+	width: 69px;
+	height: 30px;
+	display: block;
+	margin: 0 0 0 -20px;
+}
+
+.slider-section__text {
+	margin-top: 12px;
+	font-family: var(--font-body);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-base);
+	color: var(--overlay-grey-60, rgba(255, 255, 255, 0.6));
+}
+
+.slider-section__text p {
+	margin: 0;
+}
+
+.slider-section__cta {
+	flex-shrink: 0;
+	margin-left: 24px;
+}
+
+/* Track / slides */
+.slider-section__viewport {
+	overflow: hidden;
+}
+
+.slider-section__track {
+	display: flex;
+	transition: transform 0.4s ease;
+}
+
+.slider-section__slide {
+	flex: 0 0 calc(33.333% - 20px);
+	margin: 0 15px;
+}
+
+.slider-section__slide:first-child {
+	margin-left: 0;
+}
+
+.slider-section__slide:last-child {
+	margin-right: 0;
+}
+
+/* Stagger the reveal-on-scroll animation across visible slides */
+.slider-section__slide.reveal:nth-child(2) { transition-delay: 0.1s; }
+.slider-section__slide.reveal:nth-child(3) { transition-delay: 0.2s; }
+
+.slider-section .btn.btn-secondary {
+    background-color: #191919;
+}
+
+/* Footer: counter + prev/next nav */
+.slider-section__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 50px;
+	padding-top: 20px;
+	border-top: 1px solid var(--color-border);
+}
+
+.slider-section__counter {
+	font-family: var(--font-body);
+	font-size: 20px;
+	color: var(--overlay-grey-60, rgba(255, 255, 255, 0.6));
+}
+
+.slider-section__counter span.slider-section__counter-current {
+	color: var(--color-white);
+}
+
+.slider-section__nav {
+	display: flex;
+}
+
+.slider-section__nav-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 58px;
+	height: 58px;
+	border-radius: 500px;
+	background-color: var(--color-grey);
+	border: 1px solid var(--color-border);
+	color: var(--color-white);
+	cursor: pointer;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.slider-section__nav-btn + .slider-section__nav-btn {
+	margin-left: 10px;
+}
+
+.slider-section__nav-btn:hover {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.slider-section__nav-btn:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+	background-color: var(--color-grey);
+	border-color: var(--color-border);
+}
+
+.slider-section__nav-btn svg,
+.slider-section__nav-btn img {
+	width: 21px;
+	height: 18px;
+	display: block;
+}
+
+/* Archive grid (archive-property.php / archive-testimonial.php / archive-faq.php)
+   and the single property page — same wrapper classes regardless of post type,
+   the card markup inside is styled by the per-source partial. */
+.cpt-archive {
+	background-color: var(--color-black);
+	padding-block: 80px;
+}
+
+.cpt-archive__header {
+	margin-bottom: 40px;
+}
+
+.cpt-archive__title {
+	margin: 0;
+	font-family: var(--font-heading);
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 120%;
+	color: var(--color-white);
+}
+
+.cpt-archive__grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -24px;
+	margin-bottom: -24px;
+}
+
+.cpt-archive__grid > * {
+	flex: 1 1 calc(33.333% - 24px);
+	min-width: 260px;
+	margin-right: 24px;
+	margin-bottom: 24px;
+}
+
+.cpt-archive__pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.cpt-archive__pagination .page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	height: 40px;
+	margin: 0 4px;
+	padding: 0 8px;
+	border-radius: 500px;
+	background-color: var(--color-grey);
+	border: 1px solid var(--color-border);
+	color: var(--color-white);
+	text-decoration: none;
+	font-family: var(--font-body);
+	font-size: 14px;
+}
+
+.cpt-archive__pagination .page-numbers.current {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.cpt-single {
+	background-color: var(--color-black);
+	color: var(--color-white);
+	padding-block: 80px;
+}
+
+.cpt-single__title {
+	margin: 0 0 24px;
+	font-family: var(--font-heading);
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 120%;
+}
+
+.cpt-single__image {
+	border-radius: 16px;
+	overflow: hidden;
+	margin-bottom: 24px;
+}
+
+.cpt-single__image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.cpt-single__content {
+	margin-top: 24px;
+	font-family: var(--font-body);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-base);
+	color: var(--overlay-grey-60, rgba(255, 255, 255, 0.6));
+}
+@media (max-width: 1440px) {
+	.slider-section__slide {
+		flex: 0 0 calc((100% - 40px) / 3);
+		margin: 0 10px;
+	}
+	.slider-section {
+		padding: 80px 80px 45px;
+	}
+	.slider-section__counter {
+		font-size: 16px;
+	}
+	.slider-section__nav-btn {
+		width: 44px;
+		height: 44px;
+	}
+	.slider-section__nav-btn svg, .slider-section__nav-btn img {
+		width: 16px;
+	}
+	.slider-section__footer {
+		margin-top: 40px;
+		padding-top: 16px;
+	}
+	.slider-section__text {
+		margin-top: 10px;
+	}
+	.slider-section__header {
+		margin-bottom: 60px;
+	}
+}
+@media (max-width: 1200px) {
+	.slider-section {
+        padding: 50px 30px 45px;
+    }
+	.slider-section__slide {
+		flex: 0 0 calc((100% - 16px) / 2);
+		margin: 0 8px;
+	}
+	.slider-section__header {
+		margin-bottom: 40px;
+	}
+	.slider-section__header {
+        align-items: end;
+    }
+}
+
+@media (max-width: 992px) {
+	.slider-section {
+		padding-block: 56px;
+	}
+
+	.slider-section__slide {
+		flex: 0 0 calc(50% - 12px);
+		margin: 0 12px;
+	}
+
+	.cpt-archive__grid > * {
+		flex: 1 1 calc(50% - 24px);
+	}
+}
+
+@media (max-width: 767px) {
+	.slider-section__header {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.slider-section__cta {
+		margin-left: 0;
+		margin-top: 16px;
+	}
+
+	.slider-section__slide {
+		flex: 0 0 100%;
+		margin: 0;
+	}
+
+	.cpt-archive {
+		padding-block: 32px;
+	}
+
+	.cpt-archive__grid > * {
+		flex: 1 1 100%;
+	}
+
+	.cpt-single {
+		padding-block: 32px;
+	}
+
+	.cpt-single__title {
+		font-size: 28px;
+	}
+	.slider-section__counter {
+        font-size: 14px;
+		margin-right: 10px;
+        display: inline-block !important;
+    }
+	.slider-section {
+        padding: 56px 16px 45px!important;
+    }
+	.slider-section__eyebrow img {
+		margin: 0 0 0 -8px;
+	}
+	.slider-section__slide {
+		flex: 0 0 100%;
+		margin: 0;
+	}
+	.slider-section__heading {
+		width: 100%;
+	}
+
+	.slider-section .container {
+		display: grid;
+		grid-template-columns: 1fr auto auto auto;
+		grid-template-areas:
+			"heading heading heading heading"
+			"viewport viewport viewport viewport"
+			"cta prev counter next";
+		align-items: center;
+	}
+
+	.slider-section__header,
+	.slider-section__footer,
+	.slider-section__nav {
+		display: contents;
+	}
+
+	.slider-section__heading {
+		grid-area: heading;
+	}
+
+	.slider-section__viewport {
+		grid-area: viewport;
+		margin-top: 40px;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 30px;
+	}
+
+	.slider-section__cta {
+		grid-area: cta;
+		margin-top: 24px;
+		margin-left: 0;
+	}
+
+	.slider-section__counter {
+		grid-area: counter;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 24px;
+		margin-left: 12px;
+	}
+
+	.slider-section [data-slider-prev] {
+		grid-area: prev;
+		margin-top: 24px;
+	}
+
+	.slider-section [data-slider-next] {
+		grid-area: next;
+		margin-top: 24px;
+		margin-left: 12px;
+	}
+}
+
+@media (max-width: 375px) {
+	.slider-section .container {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas:
+			"heading heading heading"
+			"viewport viewport viewport"
+			"cta cta cta"
+			"prev counter next";
+	}
+
+	.slider-section [data-slider-prev],
+	.slider-section__counter,
+	.slider-section [data-slider-next] {
+		justify-self: center;
+	}
+
+	.slider-section [data-slider-prev] {
+		margin-left: 0;
+	}
+
+	.slider-section__counter {
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+
+	.slider-section [data-slider-next] {
+		margin-left: 0;
+	}
+	.slider-section__cta {
+        text-align: center;
+    }
+}

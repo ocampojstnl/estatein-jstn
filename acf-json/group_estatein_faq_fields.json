@@ -1,0 +1,35 @@
+{
+    "key": "group_estatein_faq_fields",
+    "title": "FAQ Details",
+    "fields": [
+        {
+            "key": "field_faq_description",
+            "label": "Description",
+            "name": "description",
+            "type": "wysiwyg",
+            "instructions": "The full answer, shown in the \"Read More\" popup. A trimmed version is shown on the card.",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "faq"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

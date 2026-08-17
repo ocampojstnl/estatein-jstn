@@ -1,0 +1,70 @@
+{
+    "key": "group_estatein_testimonial_fields",
+    "title": "Testimonial Details",
+    "fields": [
+        {
+            "key": "field_testimonial_description",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "rows": 4
+        },
+        {
+            "key": "field_testimonial_stars",
+            "label": "Number of Stars",
+            "name": "stars",
+            "type": "number",
+            "default_value": 5,
+            "min": 1,
+            "max": 5
+        },
+        {
+            "key": "field_testimonial_author",
+            "label": "Author",
+            "name": "author",
+            "type": "group",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_testimonial_author_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text"
+                },
+                {
+                    "key": "field_testimonial_author_headshot",
+                    "label": "Headshot",
+                    "name": "headshot",
+                    "type": "image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all"
+                },
+                {
+                    "key": "field_testimonial_author_location",
+                    "label": "Location",
+                    "name": "location",
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

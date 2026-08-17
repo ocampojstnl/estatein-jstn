@@ -1,0 +1,14 @@
+/*
+Theme Name: Estatein
+Theme URI: https://github.com/ocampojstnl/estatein-jstn
+Author: Justin Al Ocampo
+Author URI: https://jstnprtfl.vercel.app/
+Description: Custom WordPress theme with ACF block support.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+Text Domain: estatein
+*/
+
+/* This file intentionally left as the WordPress theme header only.
+   Global styling lives in assets/style.css and is enqueued via functions.php. */
