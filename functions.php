@@ -173,3 +173,4 @@ require_once ESTATEIN_DIR . '/inc/template-tags.php';
 require_once ESTATEIN_DIR . '/inc/acf-fields.php';
 require_once ESTATEIN_DIR . '/inc/post-types.php';
 require_once ESTATEIN_DIR . '/inc/slider-render.php';
+require_once ESTATEIN_DIR . '/inc/login.php';
