@@ -73,6 +73,20 @@ function estatein_custom_logout_url( $logout_url ) {
 add_filter( 'logout_url', 'estatein_custom_logout_url' );
 
 /**
+ * The login/lostpassword/register forms build their own `action` attribute
+ * via site_url( 'wp-login.php', $context ) directly — not through login_url()
+ * — so without this, submitting the form POSTs straight to the real
+ * wp-login.php and gets caught by estatein_hide_real_login_url() above.
+ */
+function estatein_custom_site_url( $url, $path ) {
+	if ( 'wp-login.php' === trim( (string) $path, '/' ) ) {
+		$url = str_replace( 'wp-login.php', ESTATEIN_LOGIN_SLUG, $url );
+	}
+	return $url;
+}
+add_filter( 'site_url', 'estatein_custom_site_url', 10, 2 );
+
+/**
  * Custom login page branding — dark theme matching the rest of the site.
  */
 function estatein_login_styles() {
